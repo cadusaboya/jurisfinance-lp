@@ -21,7 +21,15 @@ export default function Home() {
             <a href="#planos" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Planos</a>
           </nav>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden sm:flex">Login</Button>
+            <Button
+              variant="ghost"
+              className="hidden sm:flex"
+              onClick={() => {
+                window.location.href = "https://jurisfinance-bice.vercel.app/";
+              }}
+            >
+              Login
+            </Button>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Começar Agora</Button>
           </div>
         </div>
