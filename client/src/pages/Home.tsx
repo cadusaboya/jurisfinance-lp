@@ -24,7 +24,7 @@ export default function Home() {
               variant="ghost"
               className="hidden sm:flex"
               onClick={() => {
-                window.location.href = "https://jurisfinance-bice.vercel.app/";
+                window.location.href = "https://app.vincorapp.com.br/";
               }}
             >
               Login
