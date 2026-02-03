@@ -12,8 +12,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Shield className="h-8 w-8 text-primary" />
-            <span className="text-xl font-serif font-bold text-primary">JurisFinance</span>
+            <img src="/vincor-blue.png" alt="Vincor" className="h-8" />
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#funcionalidades" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Funcionalidades</a>
@@ -62,7 +61,7 @@ export default function Home() {
                 <div className="absolute -inset-4 bg-accent/10 rounded-full blur-3xl opacity-30 animate-pulse"></div>
                 <img 
                   src="/images/hero-dashboard-pt.png" 
-                  alt="Dashboard do JurisFinance" 
+                  alt="Dashboard do Vincor" 
                   className="relative rounded-lg shadow-2xl border border-border/50 w-full object-cover transform hover:scale-[1.01] transition-transform duration-500"
                 />
               </div>
@@ -176,6 +175,112 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Benefits Section */}
+        <section id="beneficios" className="py-20">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Por que escolher o Vincor?
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Transforme a gestão financeira do seu escritório com tecnologia pensada para advogados.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Benefit 1 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Economia de Tempo</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Reduza o tempo gasto com tarefas financeiras em até 70%. Automatize processos repetitivos e foque no que realmente importa: seus casos.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 2 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Decisões Estratégicas</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Tenha visibilidade completa da saúde financeira do escritório. Dados em tempo real para tomar decisões informadas e estratégicas.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 3 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Redução de Inadimplência</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Controle efetivo de recebíveis com alertas automáticos e acompanhamento de pagamentos. Melhore seu fluxo de caixa significativamente.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 4 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Transparência Total</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Mantenha sócios, advogados e clientes informados com relatórios claros e profissionais. Fortaleça a confiança e credibilidade do escritório.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 5 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Conformidade e Organização</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Mantenha toda documentação financeira organizada e acessível. Facilite auditorias e garanta conformidade com as melhores práticas.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 6 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Escalabilidade</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Cresça sem limites. Nossa plataforma se adapta ao tamanho do seu escritório, de pequenos negócios a grandes operações jurídicas.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Visual Feature Showcase */}
         <section className="py-20">
           <div className="container">
@@ -186,7 +291,7 @@ export default function Home() {
               <div className="order-1 lg:order-2 space-y-6">
                 <h3 className="text-3xl font-serif font-bold text-primary">Controle Financeiro Preciso</h3>
                 <p className="text-lg text-muted-foreground">
-                  Abandone as planilhas complexas. O JurisFinance centraliza todas as suas operações financeiras em uma interface limpa e à prova de erros.
+                  Abandone as planilhas complexas. O Vincor centraliza todas as suas operações financeiras em uma interface limpa e à prova de erros.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
@@ -265,7 +370,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Basic Plan */}
-              <Card className="border-2 border-transparent hover:border-primary/10 transition-all duration-300 shadow-lg relative overflow-hidden">
+              <Card className="border-2 border-transparent hover:border-primary/10 transition-all duration-300 shadow-lg relative overflow-hidden flex flex-col">
                 <CardHeader className="pb-4">
                   <CardTitle className="text-2xl font-serif text-primary">Plano Básico</CardTitle>
                   <CardDescription>Ideal para escritórios em crescimento</CardDescription>
@@ -281,11 +386,11 @@ export default function Home() {
                     )}
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-8">
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Todas as ferramentas financeiras</span>
+                      <span>Acesso completo ao software</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
@@ -293,21 +398,34 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>7 dias grátis sem cobrança</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
                       <span>Acesso via Web e Mobile</span>
                     </li>
                   </ul>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base">
-                    Começar Teste Gratuito
-                  </Button>
+                  <div className="space-y-3">
+                    <div className="relative">
+                      {/* Selo dourado circular */}
+                      <div className="absolute -top-4 -left-4 z-10">
+                        <div className="relative w-12 h-12 -rotate-15">
+                          {/* Brilho de fundo */}
+                          <div className="absolute inset-0 bg-accent opacity-30 blur-md animate-pulse rounded-full"></div>
+                          {/* Círculo dourado */}
+                          <div className="relative w-full h-full bg-gradient-to-br from-accent via-accent to-accent/80 rounded-full flex items-center justify-center shadow-xl">
+                            <div className="text-center">
+                              <div className="text-accent-foreground font-bold text-[10px] leading-tight">7<br/>DIAS</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base">
+                        Começar Teste Gratuito
+                      </Button>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
               {/* Pro Plan */}
-              <Card className="border-2 border-accent shadow-xl relative overflow-hidden transform md:-translate-y-4">
+              <Card className="border-2 border-accent shadow-xl relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
                   MAIS POPULAR
                 </div>
@@ -326,11 +444,15 @@ export default function Home() {
                     )}
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-8">
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
                       <span className="font-medium">Tudo do Plano Básico</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Relatórios em PDF customizados</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
@@ -364,7 +486,7 @@ export default function Home() {
               Pronto para elevar a gestão do seu escritório?
             </h2>
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-              Junte-se a centenas de escritórios que já modernizaram seu setor financeiro com o JurisFinance.
+              Junte-se a centenas de escritórios que já modernizaram seu setor financeiro com o Vincor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold">
@@ -383,8 +505,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <Shield className="h-6 w-6 text-primary" />
-                <span className="text-lg font-serif font-bold text-primary">JurisFinance</span>
+                <img src="/vincor-blue.png" alt="Vincor" className="h-6" />
               </div>
               <p className="text-muted-foreground max-w-xs">
                 O ERP financeiro definitivo para escritórios de advocacia que buscam excelência e controle.
@@ -410,7 +531,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            &copy; 2024 JurisFinance. Todos os direitos reservados.
+            &copy; 2026 Vincor. Todos os direitos reservados.
           </div>
         </div>
       </footer>
