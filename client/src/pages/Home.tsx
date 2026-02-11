@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ChevronRight, FileText, LayoutDashboard, PieChart, Shield, Users, Wallet } from "lucide-react";
+import { ArrowLeftRight, CheckCircle2, ChevronRight, LayoutDashboard, PieChart, Scale, Users, Wallet } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
+  const whatsappUrl = "https://wa.me/5591984147769?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Vincor!";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -29,7 +30,7 @@ export default function Home() {
             >
               Login
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Começar Agora</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open(whatsappUrl, '_blank')}>Começar Agora</Button>
           </div>
         </div>
       </header>
@@ -47,11 +48,11 @@ export default function Home() {
                   Simplifique suas finanças com um ERP completo. Controle honorários, fluxo de caixa e comissões em uma plataforma segura e intuitiva.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-base">
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-base" onClick={() => window.open("https://www.youtube.com/watch?v=ZqCTwkm84Z0", '_blank')}>
                     Ver Demonstração
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button size="lg" variant="outline" className="h-12 px-8 text-base border-primary/20 hover:bg-secondary">
+                  <Button size="lg" variant="outline" className="h-12 px-8 text-base border-primary/20 hover:bg-secondary" onClick={() => window.location.href = "/funcionalidades"}>
                     Ver Funcionalidades
                   </Button>
                 </div>
@@ -60,7 +61,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-accent/10 rounded-full blur-3xl opacity-30 animate-pulse"></div>
                 <img 
-                  src="/images/hero-dashboard-pt.png" 
+                  src="/images/hero-dashboard-custom.png"
                   alt="Dashboard do Vincor" 
                   className="relative rounded-lg shadow-2xl border border-border/50 w-full object-cover transform hover:scale-[1.01] transition-transform duration-500"
                 />
@@ -92,7 +93,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Controle total sobre suas entradas e saídas. Organize honorários, custas processuais e despesas administrativas em um só lugar.
+                    Controle total sobre suas entradas e saídas, incluindo cobranças recorrentes e salários automáticos. Organize honorários, custas processuais e despesas administrativas em um só lugar.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -146,13 +147,13 @@ export default function Home() {
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader>
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
-                    <FileText className="h-6 w-6 text-primary" />
+                    <ArrowLeftRight className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Múltiplos Pagamentos</CardTitle>
+                  <CardTitle className="text-xl">Extrato & Conciliação Bancária</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Suporte completo para parcelamentos e múltiplos meios de pagamento. Flexibilidade para seus clientes e controle para você.
+                    Importe extratos bancários, registre pagamentos e reconcilie transações automaticamente. Tenha controle total do que entra e sai em cada conta.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -161,13 +162,13 @@ export default function Home() {
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader>
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6 text-primary" />
+                    <Scale className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Segurança Bancária</CardTitle>
+                  <CardTitle className="text-xl">Gestão de Custódias</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Suporte a vários bancos para centralizar o financeiro da empresa e proteção de dados de nível empresarial.
+                    Controle valores recebidos em nome de terceiros e reembolsos a repasse. Gerencie passivos e ativos de custódia com rastreabilidade completa.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -284,33 +285,41 @@ export default function Home() {
         {/* Visual Feature Showcase */}
         <section className="py-20">
           <div className="container">
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
               <div className="order-2 lg:order-1">
-                {/* Image removed as requested */}
+                <img
+                  src="/images/finance.png"
+                  alt="Conciliação Bancária"
+                  className="rounded-xl shadow-lg w-full mx-auto lg:max-w-full"
+                />
               </div>
               <div className="order-1 lg:order-2 space-y-6">
-                <h3 className="text-3xl font-serif font-bold text-primary">Controle Financeiro Preciso</h3>
+                <h3 className="text-3xl font-serif font-bold text-primary">Conciliação Bancária sem Dor de Cabeça</h3>
                 <p className="text-lg text-muted-foreground">
-                  Abandone as planilhas complexas. O Vincor centraliza todas as suas operações financeiras em uma interface limpa e à prova de erros.
+                  Saiba exatamente o que está conciliado e o que está pendente em cada conta. O Vincor cruza seus lançamentos com os extratos bancários automaticamente.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Controle de clientes inadimplentes</span>
+                    <span className="text-muted-foreground">Status em tempo real do progresso da conciliação bancária</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Alertas de vencimento de contas</span>
+                    <span className="text-muted-foreground">Importe pagamentos direto do extrato bancário</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Fluxo de caixa realizado</span>
+                    <span className="text-muted-foreground">Visão unificada de receitas, despesas e custódias</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Entradas e saídas consolidadas com um clique</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <h3 className="text-3xl font-serif font-bold text-primary">Relatórios Profissionais em Segundos</h3>
                 <p className="text-lg text-muted-foreground">
@@ -319,23 +328,27 @@ export default function Home() {
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">DRE gerencial e contábil</span>
+                    <span className="text-muted-foreground">DRE — resultado do escritório por período</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Relatórios de produtividade por advogado</span>
+                    <span className="text-muted-foreground">Fluxo de caixa realizado com todos os lançamentos</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Análise de rentabilidade por cliente</span>
+                    <span className="text-muted-foreground">Relatório de comissões por advogado em PDF</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Geração com um clique, pronto para compartilhar</span>
                   </li>
                 </ul>
               </div>
               <div>
-                <img 
-                  src="/images/feature-reports-pt.png" 
-                  alt="Relatórios PDF" 
-                  className="rounded-lg shadow-xl w-full max-w-md mx-auto lg:max-w-full"
+                <img
+                  src="/images/reports.png"
+                  alt="Relatórios PDF"
+                  className="rounded-xl w-full mx-auto lg:max-w-full"
                 />
               </div>
             </div>
@@ -353,17 +366,17 @@ export default function Home() {
                 Escolha a opção ideal para o tamanho da sua operação. Sem contratos de fidelidade.
               </p>
               <div className="mt-6 inline-flex items-center rounded-full border p-1 bg-background cursor-pointer">
-                <button 
+                <button
                   onClick={() => setBillingCycle('monthly')}
                   className={`px-4 py-1 rounded-full text-sm font-medium transition-all ${billingCycle === 'monthly' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-primary'}`}
                 >
                   Mensal
                 </button>
-                <button 
+                <button
                   onClick={() => setBillingCycle('yearly')}
                   className={`px-4 py-1 rounded-full text-sm font-medium transition-all ${billingCycle === 'yearly' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-primary'}`}
                 >
-                  Anual (20% OFF)
+                  Anual (com desconto)
                 </button>
               </div>
             </div>
@@ -376,12 +389,12 @@ export default function Home() {
                   <CardDescription>Ideal para escritórios em crescimento</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 80' : 'R$ 64'}
+                      {billingCycle === 'monthly' ? 'R$ 149' : 'R$ 99'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        Cobrança única de R$ 768
+                        Cobrança única de R$ 1.188
                       </p>
                     )}
                   </div>
@@ -401,25 +414,24 @@ export default function Home() {
                       <span>Acesso via Web e Mobile</span>
                     </li>
                   </ul>
-                  <div className="space-y-3">
-                    <div className="relative">
-                      {/* Selo dourado circular */}
-                      <div className="absolute -top-4 -left-4 z-10">
-                        <div className="relative w-12 h-12 -rotate-15">
-                          {/* Brilho de fundo */}
-                          <div className="absolute inset-0 bg-accent opacity-30 blur-md animate-pulse rounded-full"></div>
-                          {/* Círculo dourado */}
-                          <div className="relative w-full h-full bg-gradient-to-br from-accent via-accent to-accent/80 rounded-full flex items-center justify-center shadow-xl">
-                            <div className="text-center">
-                              <div className="text-accent-foreground font-bold text-[10px] leading-tight">7<br/>DIAS</div>
-                            </div>
+                  <div className="relative">
+                    {/* Selo dourado circular */}
+                    <div className="absolute -top-4 -left-4 z-10">
+                      <div className="relative w-12 h-12 -rotate-15">
+                        <div className="absolute inset-0 bg-accent opacity-30 blur-md animate-pulse rounded-full"></div>
+                        <div className="relative w-full h-full bg-gradient-to-br from-accent via-accent to-accent/80 rounded-full flex items-center justify-center shadow-xl">
+                          <div className="text-center">
+                            <div className="text-accent-foreground font-bold text-[10px] leading-tight">7<br/>DIAS</div>
                           </div>
                         </div>
                       </div>
-                      <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base">
-                        Começar Teste Gratuito
-                      </Button>
                     </div>
+                    <Button
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
+                      onClick={() => window.open(whatsappUrl, '_blank')}
+                    >
+                      Começar Teste Gratuito
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -434,12 +446,12 @@ export default function Home() {
                   <CardDescription>Para escritórios que exigem exclusividade</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 500' : 'R$ 400'}
+                      {billingCycle === 'monthly' ? 'R$ 599' : 'R$ 500'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        Cobrança única de R$ 4.800
+                        Cobrança única de R$ 6.000
                       </p>
                     )}
                   </div>
@@ -467,7 +479,10 @@ export default function Home() {
                       <span>Consultoria de implantação</span>
                     </li>
                   </ul>
-                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold">
+                  <Button
+                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold"
+                    onClick={() => window.open(whatsappUrl, '_blank')}
+                  >
                     Falar com Consultor
                   </Button>
                 </CardContent>
@@ -489,11 +504,11 @@ export default function Home() {
               Junte-se a centenas de escritórios que já modernizaram seu setor financeiro com o Vincor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold">
-                Começar Teste Gratuito
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold" onClick={() => window.open(whatsappUrl, '_blank')}>
                 Falar com Consultor
+              </Button>
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => window.open(whatsappUrl, '_blank')}>
+                Começar Teste Gratuito
               </Button>
             </div>
           </div>
@@ -508,7 +523,7 @@ export default function Home() {
                 <img src="/vincor-blue.png" alt="Vincor" className="h-6" />
               </div>
               <p className="text-muted-foreground max-w-xs">
-                O ERP financeiro definitivo para escritórios de advocacia que buscam excelência e controle.
+                O ERP definitivo para escritórios de advocacia que buscam excelência e controle.
               </p>
             </div>
             <div>
@@ -524,9 +539,9 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-primary">Empresa</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="#" className="hover:text-primary">Sobre Nós</a></li>
-                <li><a href="#" className="hover:text-primary">Contato</a></li>
-                <li><a href="#" className="hover:text-primary">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-primary">Privacidade</a></li>
+                <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary">Contato</a></li>
+                <li><a href="/termos-de-uso" className="hover:text-primary">Termos de Uso</a></li>
+                <li><a href="/privacidade" className="hover:text-primary">Privacidade</a></li>
               </ul>
             </div>
           </div>
