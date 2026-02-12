@@ -381,20 +381,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Basic Plan */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {/* Essencial Plan */}
               <Card className="border-2 border-transparent hover:border-primary/10 transition-all duration-300 shadow-lg relative overflow-hidden flex flex-col">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-serif text-primary">Plano Básico</CardTitle>
-                  <CardDescription>Ideal para escritórios em crescimento</CardDescription>
+                  <CardTitle className="text-2xl font-serif text-primary">Plano Essencial</CardTitle>
+                  <CardDescription>Ideal para advogado solo que quer controle financeiro organizado</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 149' : 'R$ 99'}
+                      {billingCycle === 'monthly' ? 'R$ 120' : 'R$ 99'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        Cobrança única de R$ 1.188
+                        R$ 1.190/ano — economize R$ 250
                       </p>
                     )}
                   </div>
@@ -403,19 +403,30 @@ export default function Home() {
                   <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Acesso completo ao software</span>
+                      <span>1 Usuário</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Suporte Básico (Email/Chat)</span>
+                      <span>Dashboard financeiro completo</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Controle de receitas e despesas</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Relatórios financeiros consolidados</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
                       <span>Acesso via Web e Mobile</span>
                     </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Suporte básico</span>
+                    </li>
                   </ul>
                   <div className="relative">
-                    {/* Selo dourado circular */}
                     <div className="absolute -top-4 -left-4 z-10">
                       <div className="relative w-12 h-12 -rotate-15">
                         <div className="absolute inset-0 bg-accent opacity-30 blur-md animate-pulse rounded-full"></div>
@@ -436,22 +447,22 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Pro Plan */}
+              {/* Profissional Plan */}
               <Card className="border-2 border-accent shadow-xl relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
-                  MAIS POPULAR
+                  MAIS ESCOLHIDO
                 </div>
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-serif text-primary">Plano PRO</CardTitle>
-                  <CardDescription>Para escritórios que exigem exclusividade</CardDescription>
+                  <CardTitle className="text-2xl font-serif text-primary">Plano Profissional</CardTitle>
+                  <CardDescription>Ideal para escritórios em crescimento que querem gestão estratégica</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 599' : 'R$ 500'}
+                      {billingCycle === 'monthly' ? 'R$ 250' : 'R$ 207'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        Cobrança única de R$ 6.000
+                        R$ 2.490/ano — economize R$ 510
                       </p>
                     )}
                   </div>
@@ -460,27 +471,84 @@ export default function Home() {
                   <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span className="font-medium">Tudo do Plano Básico</span>
+                      <span className="font-medium">Tudo do Plano Essencial</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Relatórios em PDF customizados</span>
+                      <span>Até 3 usuários</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Suporte Premium Prioritário</span>
+                      <span>Centros de Custo</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Desenvolvimento sob medida</span>
+                      <span>Relatórios por cliente e área</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Consultoria de implantação</span>
+                      <span>PDFs customizáveis</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Dashboard customizável</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Suporte prioritário</span>
                     </li>
                   </ul>
                   <Button
                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold"
+                    onClick={() => window.open(whatsappUrl, '_blank')}
+                  >
+                    Falar com Consultor
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Evolution Plan */}
+              <Card className="border-2 border-transparent hover:border-primary/10 transition-all duration-300 shadow-lg relative overflow-hidden flex flex-col">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl font-serif text-primary">Plano Evolution</CardTitle>
+                  <CardDescription>Para escritórios estruturados que querem evolução contínua</CardDescription>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold text-primary">
+                      {billingCycle === 'monthly' ? 'R$ 600' : 'R$ 499'}
+                    </span>
+                    <span className="text-muted-foreground">/mês</span>
+                    {billingCycle === 'yearly' && (
+                      <p className="text-xs text-muted-foreground mt-1">
+                        R$ 5.990/ano — economize R$ 1.210
+                      </p>
+                    )}
+                  </div>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-3 mb-8 flex-1">
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span className="font-medium">Tudo do Plano Profissional</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Onboarding estratégico personalizado</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Implantação assistida</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Treinamento da equipe</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                      <span>Influência direta na evolução do sistema</span>
+                    </li>
+                  </ul>
+                  <Button
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
                     onClick={() => window.open(whatsappUrl, '_blank')}
                   >
                     Falar com Consultor
