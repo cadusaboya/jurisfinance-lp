@@ -471,12 +471,12 @@ export default function Home() {
                   <CardDescription>Para escritórios estruturados que querem evolução contínua</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 397' : 'R$ 331'}
+                      {billingCycle === 'monthly' ? 'R$ 600' : 'R$ 500'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        R$ 3.970/ano · 2 meses grátis
+                        R$ 6.000/ano · 2 meses grátis
                       </p>
                     )}
                   </div>
@@ -506,9 +506,9 @@ export default function Home() {
                   </ul>
                   <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
-                    onClick={() => window.location.href = `https://app.vincorapp.com.br/cadastro?plano=EVOLUTION&ciclo=${billingCycle === 'monthly' ? 'MONTHLY' : 'ANNUAL'}`}
+                    onClick={() => window.open(whatsappUrl, '_blank')}
                   >
-                    Começar Agora
+                    Falar com Consultor
                   </Button>
                 </CardContent>
               </Card>
