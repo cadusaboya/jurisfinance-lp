@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Funcionalidades from "./pages/Funcionalidades";
 import Home from "./pages/Home";
@@ -39,6 +40,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <WhatsAppButton />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
