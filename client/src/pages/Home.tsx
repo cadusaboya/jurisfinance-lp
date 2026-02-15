@@ -30,7 +30,7 @@ export default function Home() {
             >
               Login
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open(whatsappUrl, '_blank')}>Começar Agora</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}>Começar Agora</Button>
           </div>
         </div>
       </header>
@@ -376,7 +376,7 @@ export default function Home() {
                   onClick={() => setBillingCycle('yearly')}
                   className={`px-4 py-1 rounded-full text-sm font-medium transition-all ${billingCycle === 'yearly' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-primary'}`}
                 >
-                  Anual (com desconto)
+                  Anual · 2 meses grátis
                 </button>
               </div>
             </div>
@@ -385,173 +385,169 @@ export default function Home() {
               {/* Essencial Plan */}
               <Card className="border-2 border-transparent hover:border-primary/10 transition-all duration-300 shadow-lg relative overflow-hidden flex flex-col">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-serif text-primary">Plano Essencial</CardTitle>
+                  <CardTitle className="text-2xl font-serif text-primary">Essencial</CardTitle>
                   <CardDescription>Ideal para advogado solo que quer controle financeiro organizado</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 120' : 'R$ 99'}
+                      {billingCycle === 'monthly' ? 'R$ 99' : 'R$ 82,50'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        R$ 1.190/ano — economize R$ 250
+                        R$ 990/ano · 2 meses grátis
                       </p>
                     )}
                   </div>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-1">
                   <ul className="space-y-3 mb-8 flex-1">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>1 Usuário</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Dashboard financeiro completo</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Controle de receitas e despesas</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Relatórios financeiros consolidados</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <span>Relatórios financeiros consolidados no sistema</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Acesso via Web e Mobile</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Suporte básico</span>
                     </li>
                   </ul>
-                  <div className="relative">
-                    <div className="absolute -top-4 -left-4 z-10">
-                      <div className="relative w-12 h-12 -rotate-15">
-                        <div className="absolute inset-0 bg-accent opacity-30 blur-md animate-pulse rounded-full"></div>
-                        <div className="relative w-full h-full bg-gradient-to-br from-accent via-accent to-accent/80 rounded-full flex items-center justify-center shadow-xl">
-                          <div className="text-center">
-                            <div className="text-accent-foreground font-bold text-[10px] leading-tight">7<br/>DIAS</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <Button
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
-                      onClick={() => window.open(whatsappUrl, '_blank')}
-                    >
-                      Começar Teste Gratuito
-                    </Button>
-                  </div>
+                  <Button
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
+                    onClick={() => window.location.href = `https://app.vincorapp.com.br/cadastro?plano=ESSENCIAL&ciclo=${billingCycle === 'monthly' ? 'MONTHLY' : 'ANNUAL'}`}
+                  >
+                    Começar Agora
+                  </Button>
                 </CardContent>
               </Card>
 
               {/* Profissional Plan */}
               <Card className="border-2 border-accent shadow-xl relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
-                  MAIS ESCOLHIDO
+                  MAIS POPULAR
                 </div>
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-serif text-primary">Plano Profissional</CardTitle>
+                  <CardTitle className="text-2xl font-serif text-primary">Profissional</CardTitle>
                   <CardDescription>Ideal para escritórios em crescimento que querem gestão estratégica</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 250' : 'R$ 207'}
+                      {billingCycle === 'monthly' ? 'R$ 197' : 'R$ 164'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        R$ 2.490/ano — economize R$ 510
+                        R$ 1.970/ano · 2 meses grátis
                       </p>
                     )}
                   </div>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-1">
                   <ul className="space-y-3 mb-8 flex-1">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span className="font-medium">Tudo do Plano Essencial</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Até 3 usuários</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <span>Até 3 usuários (ideal para equipe)</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Centros de Custo</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <span>Exportação de relatórios em PDF para clientes e sócios</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Relatórios por cliente e área</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <span>Controle de honorários por advogado</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>PDFs customizáveis</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <span>Atualização monetária automática de valores vencidos</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
-                      <span>Dashboard customizável</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <span>Dashboard personalizável com visão estratégica</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Suporte prioritário</span>
                     </li>
                   </ul>
-                  <Button
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold"
-                    onClick={() => window.open(whatsappUrl, '_blank')}
-                  >
-                    Falar com Consultor
-                  </Button>
+                  <div className="relative pt-5 pl-5">
+                    <div className="absolute top-0 left-0 z-10">
+                      <div className="relative w-12 h-12 -rotate-12">
+                        <div className="absolute inset-0 bg-accent opacity-30 blur-md animate-pulse rounded-full"></div>
+                        <div className="relative w-full h-full bg-gradient-to-br from-accent via-accent to-accent/80 rounded-full flex items-center justify-center shadow-xl">
+                          <div className="text-center">
+                            <div className="text-accent-foreground font-bold text-[9px] leading-tight">7<br/>DIAS</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                      className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold"
+                      onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}
+                    >
+                      Teste Gratuito
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
               {/* Evolution Plan */}
               <Card className="border-2 border-transparent hover:border-primary/10 transition-all duration-300 shadow-lg relative overflow-hidden flex flex-col">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-serif text-primary">Plano Evolution</CardTitle>
+                  <CardTitle className="text-2xl font-serif text-primary">Evolution</CardTitle>
                   <CardDescription>Para escritórios estruturados que querem evolução contínua</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {billingCycle === 'monthly' ? 'R$ 600' : 'R$ 499'}
+                      {billingCycle === 'monthly' ? 'R$ 397' : 'R$ 331'}
                     </span>
                     <span className="text-muted-foreground">/mês</span>
                     {billingCycle === 'yearly' && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        R$ 5.990/ano — economize R$ 1.210
+                        R$ 3.970/ano · 2 meses grátis
                       </p>
                     )}
                   </div>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-1">
                   <ul className="space-y-3 mb-8 flex-1">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span className="font-medium">Tudo do Plano Profissional</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Onboarding estratégico personalizado</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Implantação assistida</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Treinamento da equipe</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent" />
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span>Influência direta na evolução do sistema</span>
                     </li>
                   </ul>
                   <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
-                    onClick={() => window.open(whatsappUrl, '_blank')}
+                    onClick={() => window.location.href = `https://app.vincorapp.com.br/cadastro?plano=EVOLUTION&ciclo=${billingCycle === 'monthly' ? 'MONTHLY' : 'ANNUAL'}`}
                   >
-                    Falar com Consultor
+                    Começar Agora
                   </Button>
                 </CardContent>
               </Card>
@@ -575,7 +571,7 @@ export default function Home() {
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold" onClick={() => window.open(whatsappUrl, '_blank')}>
                 Falar com Consultor
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => window.open(whatsappUrl, '_blank')}>
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}>
                 Começar Teste Gratuito
               </Button>
             </div>
