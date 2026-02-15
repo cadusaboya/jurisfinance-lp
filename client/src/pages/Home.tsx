@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeftRight, CheckCircle2, ChevronRight, LayoutDashboard, PieChart, Scale, Users, Wallet } from "lucide-react";
+import { ArrowLeftRight, BarChart3, CheckCircle2, ChevronRight, Clock3, LayoutDashboard, PieChart, Scale, ShieldCheck, Users, Wallet } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
             <img src="/vincor-blue.png" alt="Vincor" className="h-8" />
           </div>
           <nav className="hidden md:flex gap-6">
-            <a href="#funcionalidades" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Funcionalidades</a>
             <a href="#beneficios" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Benefícios</a>
+            <a href="#funcionalidades" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Funcionalidades</a>
             <a href="#planos" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Planos</a>
           </nav>
           <div className="flex items-center gap-4">
@@ -41,6 +41,9 @@ export default function Home() {
           <div className="container relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
+                <div className="-mb-5 inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-4 py-1 text-sm font-medium text-accent">
+                  Desenvolvido a partir da rotina real de um escritório
+                </div>
                 <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight text-primary">
                   Gestão Financeira de Elite para <span className="text-accent">Escritórios de Advocacia</span>
                 </h1>
@@ -48,14 +51,17 @@ export default function Home() {
                   Simplifique suas finanças com um ERP completo. Controle honorários, fluxo de caixa e comissões em uma plataforma segura e intuitiva.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-base" onClick={() => window.open("https://www.youtube.com/watch?v=ZqCTwkm84Z0", '_blank')}>
-                    Ver Demonstração
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-base" onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}>
+                    Testar por 7 dias
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button size="lg" variant="outline" className="h-12 px-8 text-base border-primary/20 hover:bg-secondary" onClick={() => window.location.href = "/funcionalidades"}>
-                    Ver Funcionalidades
+                  <Button size="lg" variant="outline" className="h-12 px-8 text-base border-primary/20 hover:bg-secondary" onClick={() => window.open("https://www.youtube.com/watch?v=ZqCTwkm84Z0", "_blank")}>
+                    Ver Demonstração
                   </Button>
                 </div>
+                <p className="-mt-5 text-sm text-muted-foreground">
+                  Sem necessidade de cartão de crédito.
+                </p>
                 {/* Removed Setup Gratuito and Suporte Premium as requested */}
               </div>
               <div className="relative">
@@ -64,6 +70,140 @@ export default function Home() {
                   src="/images/hero-dashboard-custom.png"
                   alt="Dashboard do Vincor" 
                   className="relative rounded-lg shadow-2xl border border-border/50 w-full object-cover transform hover:scale-[1.01] transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section id="beneficios" className="py-20">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Por que escolher o Vincor?
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Transforme a gestão financeira do seu escritório com tecnologia pensada para advogados.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Benefit 1 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <Clock3 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Mais Tempo para o Jurídico</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Automatize cobranças, emissão de recibos, comissões, conciliação e rotinas recorrentes. O time para de perder horas com planilhas e volta a focar em estratégia e clientes.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 2 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <BarChart3 className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Visão Clara do Caixa</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Tenha uma visão clara de entradas, saídas, inadimplência e resultados em tempo real. Decida com dados, não com suposição.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              {/* Benefit 3 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
+                <CardHeader>
+                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <ShieldCheck className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl">Cobranças e Repasses sem Erros</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    Centralize recebimentos, honorários, custódias e comissões com rastreabilidade. Reduza erros, atrasos e retrabalho no fechamento financeiro.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Visual Feature Showcase */}
+        <section className="py-20">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+              <div className="order-2 lg:order-1">
+                <img
+                  src="/images/finance.png"
+                  alt="Conciliação Bancária"
+                  className="rounded-xl shadow-lg w-full mx-auto lg:max-w-full"
+                />
+              </div>
+              <div className="order-1 lg:order-2 space-y-6">
+                <h3 className="text-3xl font-serif font-bold text-primary">Conciliação Bancária sem Dor de Cabeça</h3>
+                <p className="text-lg text-muted-foreground">
+                  Saiba exatamente o que está conciliado e o que está pendente em cada conta. O Vincor cruza seus lançamentos com os extratos bancários automaticamente.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Status em tempo real do progresso da conciliação bancária</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Importe pagamentos direto do extrato bancário</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Visão unificada de receitas, despesas e custódias</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Entradas e saídas consolidadas com um clique</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-3xl font-serif font-bold text-primary">Relatórios Profissionais em Segundos</h3>
+                <p className="text-lg text-muted-foreground">
+                  Impressione seus sócios e clientes com relatórios financeiros detalhados e visualmente impecáveis. Exporte para PDF com apenas um clique.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">DRE — resultado do escritório por período</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Fluxo de caixa realizado com todos os lançamentos</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Relatório de comissões por advogado em PDF</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="h-2 w-2 rounded-full bg-accent"></div>
+                    <span className="text-muted-foreground">Geração com um clique, pronto para compartilhar</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <img
+                  src="/images/reports.png"
+                  alt="Relatórios PDF"
+                  className="rounded-xl w-full mx-auto lg:max-w-full"
                 />
               </div>
             </div>
@@ -172,185 +312,6 @@ export default function Home() {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section id="beneficios" className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
-                Por que escolher o Vincor?
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Transforme a gestão financeira do seu escritório com tecnologia pensada para advogados.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Benefit 1 */}
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
-                <CardHeader>
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">Economia de Tempo</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    Reduza o tempo gasto com tarefas financeiras em até 70%. Automatize processos repetitivos e foque no que realmente importa: seus casos.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-
-              {/* Benefit 2 */}
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
-                <CardHeader>
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">Decisões Estratégicas</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    Tenha visibilidade completa da saúde financeira do escritório. Dados em tempo real para tomar decisões informadas e estratégicas.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-
-              {/* Benefit 3 */}
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
-                <CardHeader>
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">Redução de Inadimplência</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    Controle efetivo de recebíveis com alertas automáticos e acompanhamento de pagamentos. Melhore seu fluxo de caixa significativamente.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-
-              {/* Benefit 4 */}
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
-                <CardHeader>
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">Transparência Total</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    Mantenha sócios, advogados e clientes informados com relatórios claros e profissionais. Fortaleça a confiança e credibilidade do escritório.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-
-              {/* Benefit 5 */}
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
-                <CardHeader>
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">Conformidade e Organização</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    Mantenha toda documentação financeira organizada e acessível. Facilite auditorias e garanta conformidade com as melhores práticas.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-
-              {/* Benefit 6 */}
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-background to-secondary/20">
-                <CardHeader>
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">Escalabilidade</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    Cresça sem limites. Nossa plataforma se adapta ao tamanho do seu escritório, de pequenos negócios a grandes operações jurídicas.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Visual Feature Showcase */}
-        <section className="py-20">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-              <div className="order-2 lg:order-1">
-                <img
-                  src="/images/finance.png"
-                  alt="Conciliação Bancária"
-                  className="rounded-xl shadow-lg w-full mx-auto lg:max-w-full"
-                />
-              </div>
-              <div className="order-1 lg:order-2 space-y-6">
-                <h3 className="text-3xl font-serif font-bold text-primary">Conciliação Bancária sem Dor de Cabeça</h3>
-                <p className="text-lg text-muted-foreground">
-                  Saiba exatamente o que está conciliado e o que está pendente em cada conta. O Vincor cruza seus lançamentos com os extratos bancários automaticamente.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Status em tempo real do progresso da conciliação bancária</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Importe pagamentos direto do extrato bancário</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Visão unificada de receitas, despesas e custódias</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Entradas e saídas consolidadas com um clique</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h3 className="text-3xl font-serif font-bold text-primary">Relatórios Profissionais em Segundos</h3>
-                <p className="text-lg text-muted-foreground">
-                  Impressione seus sócios e clientes com relatórios financeiros detalhados e visualmente impecáveis. Exporte para PDF com apenas um clique.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">DRE — resultado do escritório por período</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Fluxo de caixa realizado com todos os lançamentos</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Relatório de comissões por advogado em PDF</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent"></div>
-                    <span className="text-muted-foreground">Geração com um clique, pronto para compartilhar</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <img
-                  src="/images/reports.png"
-                  alt="Relatórios PDF"
-                  className="rounded-xl w-full mx-auto lg:max-w-full"
-                />
-              </div>
             </div>
           </div>
         </section>
