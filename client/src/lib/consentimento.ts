@@ -1,10 +1,20 @@
 /**
  * Consent Mode v2 (LGPD).
  *
+ * O banner funciona como opt-out, não opt-in: a medição roda por padrão e só
+ * para quando o visitante recusa. É a leitura usual da LGPD para analytics
+ * próprio, apoiada em legítimo interesse, e é o mesmo comportamento do app —
+ * que não tem banner e concede por padrão.
+ *
+ * O motivo de não negar por padrão é prático: a maioria dos visitantes não
+ * clica em nada. Negando, o GA4 não grava o `_ga`, e a visita à landing e o
+ * cadastro no app viram duas sessões distintas — o funil de aquisição, que é
+ * justamente o que a campanha precisa medir, fica furado para quase todo mundo.
+ *
  * A escolha vive num cookie no domínio raiz, não em localStorage: assim
  * `vincorapp.com.br` e `app.vincorapp.com.br` compartilham a resposta e o
  * visitante não é perguntado duas vezes na mesma jornada. O módulo equivalente
- * no repositório do app usa exatamente o mesmo nome e formato.
+ * no repositório do app lê o mesmo cookie.
  */
 
 export const COOKIE_CONSENTIMENTO = 'vincor_consentimento';
@@ -49,12 +59,17 @@ export function definirConsentimento(estado: EstadoConsentimento) {
   window.gtag?.('consent', 'update', consentimento);
 }
 
-/** Estado inicial, aplicado antes de o gtag.js carregar. */
+/**
+ * Estado inicial, aplicado antes de o gtag.js carregar.
+ *
+ * Concede, exceto quando o cookie diz explicitamente `denied` — mesma regra do
+ * app, para que o mesmo visitante seja tratado igual dos dois lados.
+ *
+ * Sem `wait_for_update` de propósito: ele serve para segurar os primeiros hits
+ * à espera de um opt-in que aqui não precisa acontecer. Mantê-lo só atrasaria
+ * cada carregamento de página sem mudar nada.
+ */
 export function consentimentoPadrao(): Record<string, unknown> {
-  const estado = lerConsentimento() ?? 'denied';
-  return {
-    ...Object.fromEntries(SINAIS.map((s) => [s, estado])),
-    // Dá meio segundo para o banner responder antes do primeiro hit sair.
-    wait_for_update: 500,
-  };
+  const estado: EstadoConsentimento = lerConsentimento() === 'denied' ? 'denied' : 'granted';
+  return Object.fromEntries(SINAIS.map((s) => [s, estado]));
 }
