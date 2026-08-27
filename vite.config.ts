@@ -150,10 +150,25 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+/**
+ * Ferramentas de autoria do Manus e do Builder — úteis para editar o site, peso
+ * morto no ar. O `vitePluginManusRuntime` embute um runtime React inteiro como
+ * script inline no index.html: eram 358 KB que bloqueavam o parsing do HTML
+ * antes de qualquer pixel aparecer. Sem elas o index.html cai de 369 KB para
+ * 2 KB, e o total gzipped de ~221 KB para ~112 KB.
+ *
+ * Ficam só em desenvolvimento. O corte usa o `command` do Vite, e não
+ * `process.env.NODE_ENV`, porque o config é carregado antes de o Vite definir a
+ * variável — depender dela deixaria o plugin escapar para produção às vezes.
+ */
+const pluginsDeAutoria = () => [
+  jsxLocPlugin(),
+  vitePluginManusRuntime(),
+  vitePluginManusDebugCollector(),
+];
 
-export default defineConfig({
-  plugins,
+export default defineConfig(({ command }) => ({
+  plugins: [react(), tailwindcss(), ...(command === "build" ? [] : pluginsDeAutoria())],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -185,4 +200,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-});
+}));
