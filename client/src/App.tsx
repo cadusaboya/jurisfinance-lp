@@ -1,10 +1,13 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import { useState } from "react";
 import { Route, Switch } from "wouter";
+import { CookieBanner } from "./components/CookieBanner";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { usePageView } from "./hooks/usePageView";
 import Funcionalidades from "./pages/Funcionalidades";
 import Home from "./pages/Home";
 import Privacidade from "./pages/Privacidade";
@@ -31,6 +34,12 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  // O banner de cookies ocupa o rodapé inteiro; o botão de WhatsApp mora no
+  // mesmo canto, então sai de cena enquanto a pergunta estiver na tela.
+  const [bannerDeCookies, setBannerDeCookies] = useState(false);
+
+  usePageView();
+
   return (
     <ErrorBoundary>
       <ThemeProvider
@@ -40,7 +49,8 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
-          <WhatsAppButton />
+          <WhatsAppButton oculto={bannerDeCookies} />
+          <CookieBanner onVisibilidade={setBannerDeCookies} />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

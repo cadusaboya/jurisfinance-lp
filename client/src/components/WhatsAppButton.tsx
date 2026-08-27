@@ -1,7 +1,16 @@
-export function WhatsAppButton() {
+import { trackEvent } from '@/lib/analytics';
+
+interface Props {
+  /** Recolhido enquanto o banner de cookies ocupa o rodapé da tela. */
+  oculto?: boolean;
+}
+
+export function WhatsAppButton({ oculto = false }: Props) {
   const phone = '5591984147769';
   const message = encodeURIComponent('Olá! Preciso de ajuda.');
   const href = `https://wa.me/${phone}?text=${message}`;
+
+  if (oculto) return null;
 
   return (
     <a
@@ -9,6 +18,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
+      onClick={() => trackEvent('clicou_whatsapp', { origem: 'landing' })}
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg px-4 py-3 transition-all duration-200 hover:scale-105"
     >
       <svg

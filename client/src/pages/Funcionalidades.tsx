@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { irParaLogin } from "@/lib/app";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ArrowLeftRight,
@@ -174,7 +175,7 @@ export default function Funcionalidades() {
             <Button
               variant="ghost"
               className="hidden sm:flex"
-              onClick={() => { window.location.href = "https://app.vincorapp.com.br/"; }}
+              onClick={irParaLogin}
             >
               Login
             </Button>

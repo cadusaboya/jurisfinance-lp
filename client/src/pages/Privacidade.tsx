@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { irParaLogin } from "@/lib/app";
 
 const whatsappUrl = "https://wa.me/5591984147769?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Vincor!";
 
@@ -26,7 +27,7 @@ export default function Privacidade() {
             <a href="/#planos" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Planos</a>
           </nav>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden sm:flex" onClick={() => { window.location.href = "https://app.vincorapp.com.br/"; }}>
+            <Button variant="ghost" className="hidden sm:flex" onClick={irParaLogin}>
               Login
             </Button>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open(whatsappUrl, '_blank')}>

@@ -2,10 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeftRight, BarChart3, CheckCircle2, ChevronRight, Clock3, LayoutDashboard, PieChart, Scale, ShieldCheck, Users, Wallet } from "lucide-react";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
+import { irParaCadastro, irParaLogin, type Ciclo } from "@/lib/app";
 
 export default function Home() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
   const whatsappUrl = "https://wa.me/5591984147769?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Vincor!";
+
+  const ciclo: Ciclo = billingCycle === 'monthly' ? 'MONTHLY' : 'ANNUAL';
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -24,13 +28,11 @@ export default function Home() {
             <Button
               variant="ghost"
               className="hidden sm:flex"
-              onClick={() => {
-                window.location.href = "https://app.vincorapp.com.br/";
-              }}
+              onClick={irParaLogin}
             >
               Login
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}>Começar Agora</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => irParaCadastro({ origem: 'header' })}>Começar Agora</Button>
           </div>
         </div>
       </header>
@@ -51,7 +53,7 @@ export default function Home() {
                   Simplifique suas finanças com um ERP completo. Controle honorários, fluxo de caixa e comissões em uma plataforma segura e intuitiva.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-base" onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}>
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-base" onClick={() => irParaCadastro({ origem: 'hero' })}>
                     Testar por 7 dias
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -385,7 +387,7 @@ export default function Home() {
                   </ul>
                   <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
-                    onClick={() => window.location.href = `https://app.vincorapp.com.br/cadastro?plano=ESSENCIAL&ciclo=${billingCycle === 'monthly' ? 'MONTHLY' : 'ANNUAL'}`}
+                    onClick={() => irParaCadastro({ plano: 'essencial', ciclo, origem: 'plano_essencial' })}
                   >
                     Começar Agora
                   </Button>
@@ -456,7 +458,7 @@ export default function Home() {
                     </div>
                     <Button
                       className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold"
-                      onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}
+                      onClick={() => irParaCadastro({ plano: 'profissional', ciclo, origem: 'plano_profissional' })}
                     >
                       Teste Gratuito
                     </Button>
@@ -506,7 +508,10 @@ export default function Home() {
                   </ul>
                   <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base"
-                    onClick={() => window.open(whatsappUrl, '_blank')}
+                    onClick={() => {
+                      trackEvent('clicou_whatsapp', { origem: 'plano_evolution' });
+                      window.open(whatsappUrl, '_blank');
+                    }}
                   >
                     Falar com Consultor
                   </Button>
@@ -529,10 +534,13 @@ export default function Home() {
               Junte-se a centenas de escritórios que já modernizaram seu setor financeiro com o Vincor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold" onClick={() => window.open(whatsappUrl, '_blank')}>
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold" onClick={() => {
+                trackEvent('clicou_whatsapp', { origem: 'cta_final' });
+                window.open(whatsappUrl, '_blank');
+              }}>
                 Falar com Consultor
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => window.location.href = 'https://app.vincorapp.com.br/cadastro'}>
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => irParaCadastro({ origem: 'cta_final' })}>
                 Começar Teste Gratuito
               </Button>
             </div>
