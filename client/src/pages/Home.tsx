@@ -70,7 +70,10 @@ export default function Home() {
                 <div className="absolute -inset-4 bg-accent/10 rounded-full blur-3xl opacity-30 animate-pulse"></div>
                 <img 
                   src="/images/hero-dashboard-custom.png"
-                  alt="Dashboard do Vincor" 
+                  alt="Dashboard financeiro do Vincor com saldo em caixa, contas a receber e a pagar e fluxo de caixa do escritório de advocacia"
+                  width={1600}
+                  height={1000}
+                  fetchPriority="high"
                   className="relative rounded-lg shadow-2xl border border-border/50 w-full object-cover transform hover:scale-[1.01] transition-transform duration-500"
                 />
               </div>
@@ -146,7 +149,10 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <img
                   src="/images/finance.png"
-                  alt="Conciliação Bancária"
+                  alt="Relatório de conciliação bancária do Vincor com lançamentos conciliados e pendentes por conta"
+                  width={2584}
+                  height={1276}
+                  loading="lazy"
                   className="rounded-xl shadow-lg w-full mx-auto lg:max-w-full"
                 />
               </div>
@@ -204,7 +210,10 @@ export default function Home() {
               <div>
                 <img
                   src="/images/reports.png"
-                  alt="Relatórios PDF"
+                  alt="DRE, fluxo de caixa realizado e relatório de comissionamento de advogados em PDF gerados pelo Vincor"
+                  width={1600}
+                  height={1000}
+                  loading="lazy"
                   className="rounded-xl w-full mx-auto lg:max-w-full"
                 />
               </div>
@@ -314,6 +323,13 @@ export default function Home() {
                   </CardDescription>
                 </CardContent>
               </Card>
+            </div>
+
+            <div className="text-center mt-12">
+              <a href="/funcionalidades" className="inline-flex items-center text-base font-medium text-primary hover:text-accent transition-colors">
+                Ver todas as funcionalidades
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>
@@ -523,25 +539,25 @@ export default function Home() {
 
         {/* CTA Section */}
         <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <img src="/images/cta-background.png" alt="Background" className="w-full h-full object-cover" />
-          </div>
+          {/* Era uma textura PNG de 5,9 MB a 10% de opacidade; o gradiente
+              reproduz o brilho no topo sem baixar nada. */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.08),transparent_65%)]" aria-hidden="true" />
           <div className="container relative z-10 text-center">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
               Pronto para elevar a gestão do seu escritório?
             </h2>
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-              Junte-se a centenas de escritórios que já modernizaram seu setor financeiro com o Vincor.
+              Feito a partir da rotina real de um escritório de advocacia. Teste 7 dias grátis, sem cartão de crédito.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold" onClick={() => {
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10 text-lg font-semibold" onClick={() => irParaCadastro({ origem: 'cta_final' })}>
+                Começar Teste Gratuito
+              </Button>
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => {
                 trackEvent('clicou_whatsapp', { origem: 'cta_final' });
                 window.open(whatsappUrl, '_blank');
               }}>
                 Falar com Consultor
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-14 px-10 text-lg" onClick={() => irParaCadastro({ origem: 'cta_final' })}>
-                Começar Teste Gratuito
               </Button>
             </div>
           </div>
@@ -562,16 +578,13 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4 text-primary">Produto</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary">Funcionalidades</a></li>
-                <li><a href="#" className="hover:text-primary">Preços</a></li>
-                <li><a href="#" className="hover:text-primary">Segurança</a></li>
-                <li><a href="#" className="hover:text-primary">Atualizações</a></li>
+                <li><a href="/funcionalidades" className="hover:text-primary">Funcionalidades</a></li>
+                <li><a href="#planos" className="hover:text-primary">Preços</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-primary">Empresa</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary">Sobre Nós</a></li>
                 <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary">Contato</a></li>
                 <li><a href="/termos-de-uso" className="hover:text-primary">Termos de Uso</a></li>
                 <li><a href="/privacidade" className="hover:text-primary">Privacidade</a></li>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rotas públicas de client/src/App.tsx. Página nova entra aqui também. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://vincorapp.com.br/</loc>
+  </url>
+  <url>
+    <loc>https://vincorapp.com.br/funcionalidades</loc>
+  </url>
+  <url>
+    <loc>https://vincorapp.com.br/privacidade</loc>
+  </url>
+  <url>
+    <loc>https://vincorapp.com.br/termos-de-uso</loc>
+  </url>
+</urlset>
