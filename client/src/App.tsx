@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Route, Switch } from "wouter";
 import { CookieBanner } from "./components/CookieBanner";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { WhatsAppButton } from "./components/WhatsAppButton";
+import { SupportButton } from "./components/SupportButton";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { usePageView } from "./hooks/usePageView";
 import Funcionalidades from "./pages/Funcionalidades";
@@ -34,7 +34,7 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  // O banner de cookies ocupa o rodapé inteiro; o botão de WhatsApp mora no
+  // O banner de cookies ocupa o rodapé inteiro; o botão de suporte mora no
   // mesmo canto, então sai de cena enquanto a pergunta estiver na tela.
   const [bannerDeCookies, setBannerDeCookies] = useState(false);
 
@@ -49,7 +49,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
-          <WhatsAppButton oculto={bannerDeCookies} />
+          <SupportButton oculto={bannerDeCookies} />
           <CookieBanner onVisibilidade={setBannerDeCookies} />
         </TooltipProvider>
       </ThemeProvider>
