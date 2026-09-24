@@ -1,8 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { useState } from "react";
-import { Route, Switch } from "wouter";
+import { useEffect, useState } from "react";
+import { Route, Switch, useLocation } from "wouter";
 import { CookieBanner } from "./components/CookieBanner";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SupportButton } from "./components/SupportButton";
@@ -12,6 +12,7 @@ import Funcionalidades from "./pages/Funcionalidades";
 import Home from "./pages/Home";
 import Privacidade from "./pages/Privacidade";
 import TermosDeUso from "./pages/TermosDeUso";
+import { metaDaRota } from "./seo";
 
 
 function Router() {
@@ -37,6 +38,14 @@ function App() {
   // O banner de cookies ocupa o rodapé inteiro; o botão de suporte mora no
   // mesmo canto, então sai de cena enquanto a pergunta estiver na tela.
   const [bannerDeCookies, setBannerDeCookies] = useState(false);
+  const [location] = useLocation();
+
+  // O HTML de cada rota já sai do build com o título certo; isto cobre a
+  // navegação no cliente. Vem antes do usePageView porque o page_view lê o
+  // document.title, e efeitos do mesmo componente rodam na ordem declarada.
+  useEffect(() => {
+    document.title = metaDaRota(location).titulo;
+  }, [location]);
 
   usePageView();
 

@@ -28,11 +28,23 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+// `as` existe para os cartões de conteúdo virarem heading (h2/h3) e contarem na
+// hierarquia da página. O index.css aplica `font-serif tracking-tight` a todo
+// heading; aqui isso é desfeito para o cartão continuar igual ao de <div> — um
+// `font-serif` passado em className ainda vence, por vir depois no cn().
+function CardTitle({
+  className,
+  as: Tag = "div",
+  ...props
+}: React.ComponentProps<"div"> & { as?: "div" | "h2" | "h3" }) {
   return (
-    <div
+    <Tag
       data-slot="card-title"
-      className={cn("leading-none font-semibold", className)}
+      className={cn(
+        "leading-none font-semibold",
+        Tag !== "div" && "font-sans tracking-normal",
+        className
+      )}
       {...props}
     />
   );

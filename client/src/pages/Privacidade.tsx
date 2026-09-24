@@ -54,6 +54,9 @@ export default function Privacidade() {
               <p>
                 A Vincor leva a privacidade dos seus dados a sério. Esta Política descreve quais informações coletamos, como as utilizamos, onde as armazenamos, com quem as compartilhamos e como as protegemos, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
               </p>
+              <p>
+                O Vincor é um produto da AES Solutions Ltda, inscrita no CNPJ sob o nº 65.841.720/0001-25, com sede em Belém/PA.
+              </p>
             </Section>
 
             <Section title="2. Quais dados coletamos">
@@ -131,7 +134,9 @@ export default function Privacidade() {
                 <li>Revogar o consentimento a qualquer momento, quando o tratamento for baseado em consentimento.</li>
               </ul>
               <p>
-                Para exercer qualquer um desses direitos, entre em contato pelo WhatsApp:{" "}
+                Para exercer qualquer um desses direitos, escreva para{" "}
+                <a href="mailto:suporte@vincorapp.com.br" className="text-primary hover:underline font-medium">suporte@vincorapp.com.br</a>{" "}
+                ou fale conosco pelo WhatsApp:{" "}
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline font-medium">
                   (91) 98414-7769
                 </a>.
@@ -152,7 +157,13 @@ export default function Privacidade() {
 
             <Section title="10. Contato">
               <p>
-                Dúvidas, solicitações ou reclamações relacionadas à privacidade podem ser enviadas pelo WhatsApp:{" "}
+                Encarregado pelo tratamento de dados pessoais (art. 41 da LGPD): Carlos Saboya —{" "}
+                <a href="mailto:carlosepsaboya@gmail.com" className="text-primary hover:underline font-medium">carlosepsaboya@gmail.com</a>.
+              </p>
+              <p>
+                Dúvidas, solicitações ou reclamações relacionadas à privacidade podem ser enviadas para{" "}
+                <a href="mailto:suporte@vincorapp.com.br" className="text-primary hover:underline font-medium">suporte@vincorapp.com.br</a>{" "}
+                ou pelo WhatsApp:{" "}
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline font-medium">
                   (91) 98414-7769
                 </a>.
@@ -185,6 +196,7 @@ export default function Privacidade() {
               <h4 className="font-semibold mb-4 text-primary">Empresa</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary">Contato</a></li>
+                <li><a href="mailto:suporte@vincorapp.com.br" className="hover:text-primary">suporte@vincorapp.com.br</a></li>
                 <li><a href="/termos-de-uso" className="hover:text-primary">Termos de Uso</a></li>
                 <li><a href="/privacidade" className="hover:text-primary">Privacidade</a></li>
               </ul>
@@ -192,6 +204,8 @@ export default function Privacidade() {
           </div>
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
+            <br />
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
           </div>
         </div>
       </footer>

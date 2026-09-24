@@ -55,6 +55,9 @@ export default function TermosDeUso() {
                 O Vincor é um sistema de gestão financeira (ERP) desenvolvido para escritórios de advocacia. Ele permite o controle de receitas, despesas, comissões, custódias, fluxo de caixa, conciliação bancária e emissão de relatórios financeiros.
               </p>
               <p>
+                O Vincor é um produto da AES Solutions Ltda, inscrita no CNPJ sob o nº 65.841.720/0001-25, com sede em Belém/PA.
+              </p>
+              <p>
                 O acesso ao sistema é oferecido mediante contratação de um dos planos disponíveis, na modalidade SaaS (Software como Serviço), acessível via navegador web.
               </p>
             </Section>
@@ -100,7 +103,9 @@ export default function TermosDeUso() {
 
             <Section title="7. Contato">
               <p>
-                Para dúvidas sobre estes Termos de Uso, entre em contato conosco pelo WhatsApp:{" "}
+                Para dúvidas sobre estes Termos de Uso, escreva para{" "}
+                <a href="mailto:suporte@vincorapp.com.br" className="text-primary hover:underline font-medium">suporte@vincorapp.com.br</a>{" "}
+                ou fale conosco pelo WhatsApp:{" "}
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline font-medium">
                   (91) 98414-7769
                 </a>.
@@ -133,6 +138,7 @@ export default function TermosDeUso() {
               <h4 className="font-semibold mb-4 text-primary">Empresa</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary">Contato</a></li>
+                <li><a href="mailto:suporte@vincorapp.com.br" className="hover:text-primary">suporte@vincorapp.com.br</a></li>
                 <li><a href="/termos-de-uso" className="hover:text-primary">Termos de Uso</a></li>
                 <li><a href="/privacidade" className="hover:text-primary">Privacidade</a></li>
               </ul>
@@ -140,6 +146,8 @@ export default function TermosDeUso() {
           </div>
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
+            <br />
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
           </div>
         </div>
       </footer>

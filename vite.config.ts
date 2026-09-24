@@ -176,6 +176,9 @@ export default defineConfig(({ command }) => ({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  // Só afeta o build de SSR do prerender: embute as dependências no bundle
+  // para o Node não precisar resolver o ESM/CJS de cada pacote de UI.
+  ssr: { noExternal: true },
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
   build: {

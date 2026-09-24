@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { iniciarGoogleTag } from "./lib/analytics";
@@ -9,4 +9,11 @@ import { capturarAtribuicao } from "./lib/atribuicao";
 capturarAtribuicao();
 iniciarGoogleTag();
 
-createRoot(document.getElementById("root")!).render(<App />);
+// No build de produção o #root já chega preenchido pelo scripts/prerender.mjs, e
+// o React só assume o HTML existente. Em `vite dev` ele vem vazio.
+const raiz = document.getElementById("root")!;
+if (raiz.hasChildNodes()) {
+  hydrateRoot(raiz, <App />);
+} else {
+  createRoot(raiz).render(<App />);
+}

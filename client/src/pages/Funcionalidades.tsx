@@ -213,7 +213,7 @@ export default function Funcionalidades() {
                           <Icon className="h-6 w-6 text-primary" />
                         </div>
                         <div>
-                          <CardTitle className="text-xl text-primary">{mod.title}</CardTitle>
+                          <CardTitle as="h2" className="text-xl text-primary">{mod.title}</CardTitle>
                           <p className="text-sm text-muted-foreground mt-0.5">{mod.description}</p>
                         </div>
                       </div>
@@ -273,6 +273,7 @@ export default function Funcionalidades() {
               <h4 className="font-semibold mb-4 text-primary">Empresa</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary">Contato</a></li>
+                <li><a href="mailto:suporte@vincorapp.com.br" className="hover:text-primary">suporte@vincorapp.com.br</a></li>
                 <li><a href="/termos-de-uso" className="hover:text-primary">Termos de Uso</a></li>
                 <li><a href="/privacidade" className="hover:text-primary">Privacidade</a></li>
               </ul>
@@ -280,6 +281,8 @@ export default function Funcionalidades() {
           </div>
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
+            <br />
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
           </div>
         </div>
       </footer>

@@ -69,7 +69,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-accent/10 rounded-full blur-3xl opacity-30 animate-pulse"></div>
                 <img 
-                  src="/images/hero-dashboard-custom.png"
+                  src="/images/hero-dashboard.webp"
                   alt="Dashboard financeiro do Vincor com saldo em caixa, contas a receber e a pagar e fluxo de caixa do escritório de advocacia"
                   width={1600}
                   height={1000}
@@ -100,7 +100,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                     <Clock3 className="h-6 w-6 text-accent" />
                   </div>
-                  <CardTitle className="text-xl">Mais Tempo para o Jurídico</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Mais Tempo para o Jurídico</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -115,7 +115,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                     <BarChart3 className="h-6 w-6 text-accent" />
                   </div>
-                  <CardTitle className="text-xl">Visão Clara do Caixa</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Visão Clara do Caixa</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -130,7 +130,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                     <ShieldCheck className="h-6 w-6 text-accent" />
                   </div>
-                  <CardTitle className="text-xl">Cobranças e Repasses sem Erros</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Cobranças e Repasses sem Erros</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -148,10 +148,10 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
               <div className="order-2 lg:order-1">
                 <img
-                  src="/images/finance.png"
+                  src="/images/conciliacao-bancaria.webp"
                   alt="Relatório de conciliação bancária do Vincor com lançamentos conciliados e pendentes por conta"
-                  width={2584}
-                  height={1276}
+                  width={1600}
+                  height={790}
                   loading="lazy"
                   className="rounded-xl shadow-lg w-full mx-auto lg:max-w-full"
                 />
@@ -209,7 +209,7 @@ export default function Home() {
               </div>
               <div>
                 <img
-                  src="/images/reports.png"
+                  src="/images/relatorios.webp"
                   alt="DRE, fluxo de caixa realizado e relatório de comissionamento de advogados em PDF gerados pelo Vincor"
                   width={1600}
                   height={1000}
@@ -240,7 +240,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
                     <Wallet className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Contas a Pagar e Receber</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Contas a Pagar e Receber</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -255,7 +255,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
                     <LayoutDashboard className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Dashboard Intuitivo</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Dashboard Intuitivo</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -270,7 +270,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
                     <Users className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Gestão de Comissões</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Gestão de Comissões</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -285,7 +285,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
                     <PieChart className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">DRE e Relatórios</CardTitle>
+                  <CardTitle as="h3" className="text-xl">DRE e Relatórios</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -300,7 +300,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
                     <ArrowLeftRight className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Extrato & Conciliação Bancária</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Extrato & Conciliação Bancária</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -315,7 +315,7 @@ export default function Home() {
                   <div className="h-12 w-12 bg-primary/5 rounded-lg flex items-center justify-center mb-4">
                     <Scale className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">Gestão de Custódias</CardTitle>
+                  <CardTitle as="h3" className="text-xl">Gestão de Custódias</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
@@ -586,6 +586,7 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-primary">Empresa</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary">Contato</a></li>
+                <li><a href="mailto:suporte@vincorapp.com.br" className="hover:text-primary">suporte@vincorapp.com.br</a></li>
                 <li><a href="/termos-de-uso" className="hover:text-primary">Termos de Uso</a></li>
                 <li><a href="/privacidade" className="hover:text-primary">Privacidade</a></li>
               </ul>
@@ -593,6 +594,8 @@ export default function Home() {
           </div>
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
+            <br />
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
           </div>
         </div>
       </footer>
