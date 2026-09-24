@@ -59,6 +59,8 @@ const ORGANIZACAO = {
   email: "suporte@vincorapp.com.br",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Tv. 14 de Abril, 1775 – São Brás",
+    postalCode: "66063-475",
     addressLocality: "Belém",
     addressRegion: "PA",
     addressCountry: "BR",

@@ -55,7 +55,7 @@ export default function TermosDeUso() {
                 O Vincor é um sistema de gestão financeira (ERP) desenvolvido para escritórios de advocacia. Ele permite o controle de receitas, despesas, comissões, custódias, fluxo de caixa, conciliação bancária e emissão de relatórios financeiros.
               </p>
               <p>
-                O Vincor é um produto da AES Solutions Ltda, inscrita no CNPJ sob o nº 65.841.720/0001-25, com sede em Belém/PA.
+                O Vincor é um produto da AES Solutions Ltda, inscrita no CNPJ sob o nº 65.841.720/0001-25, com sede na Tv. 14 de Abril, 1775 – São Brás, Belém/PA, CEP 66063-475.
               </p>
               <p>
                 O acesso ao sistema é oferecido mediante contratação de um dos planos disponíveis, na modalidade SaaS (Software como Serviço), acessível via navegador web.
@@ -147,7 +147,7 @@ export default function TermosDeUso() {
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
             <br />
-            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Tv. 14 de Abril, 1775 – São Brás, Belém/PA, CEP 66063-475
           </div>
         </div>
       </footer>

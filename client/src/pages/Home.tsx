@@ -595,7 +595,7 @@ export default function Home() {
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
             <br />
-            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Tv. 14 de Abril, 1775 – São Brás, Belém/PA, CEP 66063-475
           </div>
         </div>
       </footer>

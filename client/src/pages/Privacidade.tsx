@@ -55,7 +55,7 @@ export default function Privacidade() {
                 A Vincor leva a privacidade dos seus dados a sério. Esta Política descreve quais informações coletamos, como as utilizamos, onde as armazenamos, com quem as compartilhamos e como as protegemos, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
               </p>
               <p>
-                O Vincor é um produto da AES Solutions Ltda, inscrita no CNPJ sob o nº 65.841.720/0001-25, com sede em Belém/PA.
+                O Vincor é um produto da AES Solutions Ltda, inscrita no CNPJ sob o nº 65.841.720/0001-25, com sede na Tv. 14 de Abril, 1775 – São Brás, Belém/PA, CEP 66063-475.
               </p>
             </Section>
 
@@ -205,7 +205,7 @@ export default function Privacidade() {
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             &copy; 2026 Vincor. Todos os direitos reservados.
             <br />
-            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Belém/PA
+            AES Solutions Ltda · CNPJ 65.841.720/0001-25 · Tv. 14 de Abril, 1775 – São Brás, Belém/PA, CEP 66063-475
           </div>
         </div>
       </footer>
